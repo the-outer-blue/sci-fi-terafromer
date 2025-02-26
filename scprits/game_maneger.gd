@@ -13,10 +13,10 @@ func increase_o2(amount):
 	o2+=amount
 func increase_co2(amount):
 	co2+=amount
+	#hello
 func increase_money(amount):
 	money+=amount
 func increase_plants(amount):
-	if 
 	plants+=amount
 func increase_animals(amount):
 	animals+=amount
