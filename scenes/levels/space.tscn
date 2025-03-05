@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://caw06w7on5aoa"]
+[gd_scene load_steps=5 format=3 uid="uid://caw06w7on5aoa"]
 
 [ext_resource type="Script" path="res://scprits/game_maneger.gd" id="1_pi6c8"]
 [ext_resource type="Texture2D" uid="uid://sywo0pn30uj1" path="res://assets/Planets/planet00.png" id="2_li5l3"]
+[ext_resource type="Script" path="res://scprits/add water.gd" id="3_pktup"]
 [ext_resource type="Script" path="res://scenes/levels/planet stats.gd" id="3_xs0pn"]
 
 [node name="space" type="Node2D"]
@@ -16,7 +17,22 @@ script = ExtResource("1_pi6c8")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_li5l3")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Control"]
+offset_left = 407.0
+offset_top = 2.0
+offset_right = 573.0
+offset_bottom = 60.0
+action_mode = 0
+text = "add water"
+script = ExtResource("3_pktup")
+
+[node name="stats text" type="RichTextLabel" parent="Control"]
 offset_left = -576.0
 offset_top = 164.0
 offset_right = -346.0

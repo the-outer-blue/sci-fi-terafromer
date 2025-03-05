@@ -6,7 +6,7 @@ var money=0
 var plants=0
 var animals =0
 var water=0
-var land=0
+var land=100
 func increase_temp(amount):
 	tempreture+=amount
 func increase_o2(amount):
@@ -21,8 +21,8 @@ func increase_plants(amount):
 func increase_animals(amount):
 	animals+=amount
 func increase_land(amount):
-	land+=amount
-	water-=amount
+		land+=amount
+		water-=amount
 func increase_water(amount):
 	water+=amount
 	land-=amount
