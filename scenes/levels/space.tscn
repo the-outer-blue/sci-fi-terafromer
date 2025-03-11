@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://caw06w7on5aoa"]
+[gd_scene load_steps=7 format=3 uid="uid://caw06w7on5aoa"]
 
 [ext_resource type="Script" path="res://scprits/game_maneger.gd" id="1_pi6c8"]
 [ext_resource type="Texture2D" uid="uid://sywo0pn30uj1" path="res://assets/Planets/planet00.png" id="2_li5l3"]
+[ext_resource type="Script" path="res://scenes/levels/control.gd" id="3_1ujii"]
 [ext_resource type="Script" path="res://scprits/add water.gd" id="3_pktup"]
 [ext_resource type="Script" path="res://scenes/levels/planet stats.gd" id="3_xs0pn"]
+[ext_resource type="Script" path="res://scenes/levels/upgrade_button.gd" id="6_ryau0"]
 
 [node name="space" type="Node2D"]
 
@@ -22,19 +24,82 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="Button" type="Button" parent="Control"]
-offset_left = 407.0
-offset_top = 2.0
-offset_right = 573.0
-offset_bottom = 60.0
-action_mode = 0
-text = "add water"
-script = ExtResource("3_pktup")
+script = ExtResource("3_1ujii")
 
 [node name="stats text" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_left = -576.0
 offset_top = 164.0
 offset_right = -346.0
 offset_bottom = 322.0
 script = ExtResource("3_xs0pn")
+
+[node name="button holder" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="button holder"]
+layout_mode = 0
+offset_left = -559.0
+offset_top = -313.0
+offset_right = -459.0
+offset_bottom = -274.0
+script = ExtResource("3_pktup")
+buttontype = 5
+
+[node name="Button2" type="Button" parent="button holder"]
+layout_mode = 0
+offset_left = -412.0
+offset_top = -308.0
+offset_right = -305.0
+offset_bottom = -269.0
+script = ExtResource("3_pktup")
+buttontype = 1
+
+[node name="Button3" type="Button" parent="button holder"]
+layout_mode = 0
+offset_left = -248.0
+offset_top = -314.0
+offset_right = -132.0
+offset_bottom = -269.0
+script = ExtResource("3_pktup")
+buttontype = 2
+
+[node name="Button4" type="Button" parent="button holder"]
+layout_mode = 0
+offset_left = -57.0
+offset_top = -301.0
+offset_right = 38.0
+offset_bottom = -262.0
+script = ExtResource("3_pktup")
+buttontype = 3
+
+[node name="Button5" type="Button" parent="button holder"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = -307.0
+offset_right = 232.0
+offset_bottom = -269.0
+script = ExtResource("3_pktup")
+buttontype = 4
+
+[node name="grants" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="grants"]
+layout_mode = 0
+offset_left = 367.0
+offset_top = -322.0
+offset_right = 576.0
+offset_bottom = 319.0
+alignment = 1
+
+[node name="Button" type="Button" parent="grants/VBoxContainer"]
+custom_minimum_size = Vector2(0, 38.335)
+layout_mode = 2
+script = ExtResource("6_ryau0")
