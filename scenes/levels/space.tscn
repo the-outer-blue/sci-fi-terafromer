@@ -1,105 +1,101 @@
-[gd_scene load_steps=7 format=3 uid="uid://caw06w7on5aoa"]
+[gd_scene load_steps=8 format=3 uid="uid://caw06w7on5aoa"]
 
 [ext_resource type="Script" path="res://scprits/game_maneger.gd" id="1_pi6c8"]
+[ext_resource type="Script" path="res://scprits/score_calculator.gd" id="2_kmol2"]
 [ext_resource type="Texture2D" uid="uid://sywo0pn30uj1" path="res://assets/Planets/planet00.png" id="2_li5l3"]
-[ext_resource type="Script" path="res://scenes/levels/control.gd" id="3_1ujii"]
+[ext_resource type="Script" path="res://scprits/control.gd" id="3_1ujii"]
 [ext_resource type="Script" path="res://scprits/add water.gd" id="3_pktup"]
-[ext_resource type="Script" path="res://scenes/levels/planet stats.gd" id="3_xs0pn"]
-[ext_resource type="Script" path="res://scenes/levels/upgrade_button.gd" id="6_ryau0"]
+[ext_resource type="Script" path="res://scprits/planet stats.gd" id="3_xs0pn"]
+[ext_resource type="Script" path="res://scprits/upgrade_button.gd" id="6_ryau0"]
 
 [node name="space" type="Node2D"]
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="gamemanger" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_pi6c8")
 
+[node name="score calculator" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 367.0
+offset_top = 50.0
+offset_right = 576.0
+offset_bottom = 50.0
+script = ExtResource("2_kmol2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_li5l3")
 
-[node name="Control" type="Control" parent="."]
+[node name="ui node" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_1ujii")
 
-[node name="stats text" type="RichTextLabel" parent="Control"]
+[node name="stats text" type="RichTextLabel" parent="ui node"]
 layout_mode = 0
 offset_left = -576.0
-offset_top = 164.0
+offset_top = 106.0
 offset_right = -346.0
 offset_bottom = 322.0
 script = ExtResource("3_xs0pn")
 
-[node name="button holder" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Button" type="Button" parent="button holder"]
+[node name="upgrades button" type="HBoxContainer" parent="ui node"]
 layout_mode = 0
-offset_left = -559.0
-offset_top = -313.0
-offset_right = -459.0
-offset_bottom = -274.0
+offset_left = -560.0
+offset_top = -316.0
+offset_right = 565.0
+offset_bottom = -262.0
+alignment = 1
+
+[node name="Button" type="Button" parent="ui node/upgrades button"]
+custom_minimum_size = Vector2(100, 2.06)
+layout_mode = 2
+size_flags_horizontal = 3
 script = ExtResource("3_pktup")
 buttontype = 5
 
-[node name="Button2" type="Button" parent="button holder"]
-layout_mode = 0
-offset_left = -412.0
-offset_top = -308.0
-offset_right = -305.0
-offset_bottom = -269.0
+[node name="Button2" type="Button" parent="ui node/upgrades button"]
+custom_minimum_size = Vector2(100, 2.06)
+layout_mode = 2
+size_flags_horizontal = 3
 script = ExtResource("3_pktup")
 buttontype = 1
 
-[node name="Button3" type="Button" parent="button holder"]
-layout_mode = 0
-offset_left = -248.0
-offset_top = -314.0
-offset_right = -132.0
-offset_bottom = -269.0
+[node name="Button3" type="Button" parent="ui node/upgrades button"]
+custom_minimum_size = Vector2(100, 2.06)
+layout_mode = 2
+size_flags_horizontal = 3
 script = ExtResource("3_pktup")
 buttontype = 2
 
-[node name="Button4" type="Button" parent="button holder"]
-layout_mode = 0
-offset_left = -57.0
-offset_top = -301.0
-offset_right = 38.0
-offset_bottom = -262.0
+[node name="Button4" type="Button" parent="ui node/upgrades button"]
+custom_minimum_size = Vector2(100, 2.06)
+layout_mode = 2
+size_flags_horizontal = 3
 script = ExtResource("3_pktup")
 buttontype = 3
 
-[node name="Button5" type="Button" parent="button holder"]
-layout_mode = 0
-offset_left = 121.0
-offset_top = -307.0
-offset_right = 232.0
-offset_bottom = -269.0
+[node name="Button5" type="Button" parent="ui node/upgrades button"]
+custom_minimum_size = Vector2(100, 2.06)
+layout_mode = 2
+size_flags_horizontal = 3
 script = ExtResource("3_pktup")
 buttontype = 4
 
-[node name="grants" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="grants"]
+[node name="money stuff buttons" type="VBoxContainer" parent="ui node"]
 layout_mode = 0
 offset_left = 367.0
-offset_top = -322.0
+offset_top = -230.0
 offset_right = 576.0
-offset_bottom = 319.0
+offset_bottom = 289.0
 alignment = 1
 
-[node name="Button" type="Button" parent="grants/VBoxContainer"]
+[node name="Button" type="Button" parent="ui node/money stuff buttons"]
 custom_minimum_size = Vector2(0, 38.335)
 layout_mode = 2
 script = ExtResource("6_ryau0")

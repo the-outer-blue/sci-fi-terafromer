@@ -1,6 +1,7 @@
 extends RichTextLabel
 
 @onready var game_manager = %gamemanger
+
 #sets the value of the stats at text when called
 func _process(delta: float) -> void:
 	text = ("tempreture  "+str(game_manager.tempreture)
