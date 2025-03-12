@@ -90,6 +90,6 @@ alignment = 1
 
 [node name="timer" type="RichTextLabel" parent="ui node2/money stuff buttons"]
 clip_contents = false
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 script = ExtResource("7_p881t")

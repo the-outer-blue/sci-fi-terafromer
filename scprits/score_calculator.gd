@@ -13,40 +13,56 @@ signal tourist_visit
 
 func calculate_score():
 	score=0
+	print("tourist results")
 	if gm.tempreture >=40:
 		score-=1
+		print("temp too hiigh score -1")
 	elif gm.tempreture <=10:
 		score-=1
+		print("temp too low score -1")
 	else:
 		score+=1
+		print("temp good score +1")
 	if gm.plants >= 30:
 		score+=2
+		print("lots of plants score +2")
 	elif gm.plants <= 5:
 		score-=2
+		print("very few plants score -2")
 	elif gm.plant >=10:
 		score+=1
+		print("good amount of plants score +1")
 	else:
 		score-=1
+		print("few plants score-1")
 	if gm.animals >= 20:
 		score+=2
+		print("lots of animals score +2")
 	elif gm.animals <= 5:
 		score-=2
+		print("very few aniamls score -2")
 	elif gm.animals >= 10:
+		print("good amount of aniamals score +1")
 		score+=1
 	else:
 		score-=1
+		print("few animals score -1")
 	breathable_air=true
 	if gm.o2 > 30:
 		breathable_air=false
+		print("o2 too high")
 	elif gm.o2 < 5:
 		breathable_air=false
+		print("o2 too low")
 	elif gm.co2 > 10:
+		print("co2 too high")
 		breathable_air=false
 	if breathable_air ==false:
+		print("air unbreathable score -3")
 		score-=3
 	if score < 0 :
 		score=0
-	print(score)
+	print("score="+str(score))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

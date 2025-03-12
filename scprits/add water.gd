@@ -19,7 +19,6 @@ func _pressed():
 	elif buttontype == 4 and gm.money >= 50:
 		gm.increase_animals(1)
 		gm.increase_money(-50)
-		print(gm.co2persec)
 	elif buttontype == 5 and gm.money >= 10:
 		gm.increase_water(1)
 		gm.increase_money(-10)

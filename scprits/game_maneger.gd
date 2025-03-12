@@ -2,7 +2,7 @@ extends Node
 var tempreture = 0
 var o2=0
 var co2=0
-var money=10000
+var money=3000
 var plants=0
 var animals =0
 var water=0
@@ -84,5 +84,4 @@ func _process(delta: float) -> void:
 	co2 += co2persec*delta
 	keep_animals_check()
 	keep_plants_check()
-	max_gases=co2+o2+other_gases
 	

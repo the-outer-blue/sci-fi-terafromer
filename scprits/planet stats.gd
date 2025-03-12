@@ -7,7 +7,6 @@ func _process(delta: float) -> void:
 	text = ("tempreture  "+str(game_manager.tempreture)
 	+"\n"+"O2  "+str(round(game_manager.o2))
 	+"\n"+"CO2  "+str(round(game_manager.co2))
-	+"\n"+"other gases  "+str(round(game_manager.other_gases))
 	+"\n"+"money  "+str(game_manager.money)
 	+"\n"+"plants  "+str(game_manager.plants)
 	+"\n"+"animals "+str(game_manager.animals)
