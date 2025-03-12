@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://caw06w7on5aoa"]
+[gd_scene load_steps=7 format=3 uid="uid://caw06w7on5aoa"]
 
 [ext_resource type="Script" path="res://scprits/game_maneger.gd" id="1_pi6c8"]
 [ext_resource type="Script" path="res://scprits/score_calculator.gd" id="2_kmol2"]
 [ext_resource type="Texture2D" uid="uid://sywo0pn30uj1" path="res://assets/Planets/planet00.png" id="2_li5l3"]
-[ext_resource type="Script" path="res://scprits/control.gd" id="3_1ujii"]
 [ext_resource type="Script" path="res://scprits/add water.gd" id="3_pktup"]
 [ext_resource type="Script" path="res://scprits/planet stats.gd" id="3_xs0pn"]
-[ext_resource type="Script" path="res://scprits/upgrade_button.gd" id="6_ryau0"]
+[ext_resource type="Script" path="res://scprits/timer.gd" id="7_p881t"]
 
 [node name="space" type="Node2D"]
 
@@ -14,7 +13,9 @@
 unique_name_in_owner = true
 script = ExtResource("1_pi6c8")
 
-[node name="score calculator" type="Control" parent="."]
+[node name="score_calculator" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 367.0
@@ -29,73 +30,66 @@ script = ExtResource("2_kmol2")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_li5l3")
 
-[node name="ui node" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("3_1ujii")
+[node name="ui node2" type="Node" parent="."]
 
-[node name="stats text" type="RichTextLabel" parent="ui node"]
-layout_mode = 0
+[node name="stats text" type="RichTextLabel" parent="ui node2"]
 offset_left = -576.0
 offset_top = 106.0
 offset_right = -346.0
 offset_bottom = 322.0
 script = ExtResource("3_xs0pn")
 
-[node name="upgrades button" type="HBoxContainer" parent="ui node"]
-layout_mode = 0
+[node name="upgrades button" type="HBoxContainer" parent="ui node2"]
 offset_left = -560.0
 offset_top = -316.0
 offset_right = 565.0
 offset_bottom = -262.0
 alignment = 1
 
-[node name="Button" type="Button" parent="ui node/upgrades button"]
+[node name="Button" type="Button" parent="ui node2/upgrades button"]
 custom_minimum_size = Vector2(100, 2.06)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("3_pktup")
 buttontype = 5
 
-[node name="Button2" type="Button" parent="ui node/upgrades button"]
+[node name="Button2" type="Button" parent="ui node2/upgrades button"]
 custom_minimum_size = Vector2(100, 2.06)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("3_pktup")
 buttontype = 1
 
-[node name="Button3" type="Button" parent="ui node/upgrades button"]
+[node name="Button3" type="Button" parent="ui node2/upgrades button"]
 custom_minimum_size = Vector2(100, 2.06)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("3_pktup")
 buttontype = 2
 
-[node name="Button4" type="Button" parent="ui node/upgrades button"]
+[node name="Button4" type="Button" parent="ui node2/upgrades button"]
 custom_minimum_size = Vector2(100, 2.06)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("3_pktup")
 buttontype = 3
 
-[node name="Button5" type="Button" parent="ui node/upgrades button"]
+[node name="Button5" type="Button" parent="ui node2/upgrades button"]
 custom_minimum_size = Vector2(100, 2.06)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("3_pktup")
 buttontype = 4
 
-[node name="money stuff buttons" type="VBoxContainer" parent="ui node"]
-layout_mode = 0
+[node name="money stuff buttons" type="VBoxContainer" parent="ui node2"]
 offset_left = 367.0
 offset_top = -230.0
 offset_right = 576.0
 offset_bottom = 289.0
 alignment = 1
 
-[node name="Button" type="Button" parent="ui node/money stuff buttons"]
-custom_minimum_size = Vector2(0, 38.335)
+[node name="timer" type="RichTextLabel" parent="ui node2/money stuff buttons"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
-script = ExtResource("6_ryau0")
+script = ExtResource("7_p881t")
