@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5j6lhx8ukjnw"]
+
+[ext_resource type="Script" path="res://scprits/planet stats.gd" id="1_i6u3g"]
+[ext_resource type="Script" path="res://scprits/add water.gd" id="2_vq0sb"]
+[ext_resource type="Script" path="res://scprits/timer.gd" id="3_3iee1"]
+
+[node name="ui node" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="stats text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -576.0
+offset_top = 106.0
+offset_right = -346.0
+offset_bottom = 322.0
+script = ExtResource("1_i6u3g")
+
+[node name="upgrades button" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -560.0
+offset_top = -316.0
+offset_right = 565.0
+offset_bottom = -262.0
+alignment = 1
+
+[node name="Button" type="Button" parent="upgrades button"]
+custom_minimum_size = Vector2(100, 2.06)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_vq0sb")
+buttontype = 5
+
+[node name="Button2" type="Button" parent="upgrades button"]
+custom_minimum_size = Vector2(100, 2.06)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_vq0sb")
+buttontype = 1
+
+[node name="Button3" type="Button" parent="upgrades button"]
+custom_minimum_size = Vector2(100, 2.06)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_vq0sb")
+buttontype = 2
+
+[node name="Button4" type="Button" parent="upgrades button"]
+custom_minimum_size = Vector2(100, 2.06)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_vq0sb")
+buttontype = 3
+
+[node name="Button5" type="Button" parent="upgrades button"]
+custom_minimum_size = Vector2(100, 2.06)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_vq0sb")
+buttontype = 4
+
+[node name="money stuff buttons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 367.0
+offset_top = -230.0
+offset_right = 576.0
+offset_bottom = 289.0
+alignment = 1
+
+[node name="timer" type="RichTextLabel" parent="money stuff buttons"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 29.392)
+layout_mode = 2
+script = ExtResource("3_3iee1")
