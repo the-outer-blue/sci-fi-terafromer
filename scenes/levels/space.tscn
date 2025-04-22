@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://caw06w7on5aoa"]
+[gd_scene load_steps=14 format=3 uid="uid://caw06w7on5aoa"]
 
 [ext_resource type="Script" path="res://scprits/game_maneger.gd" id="1_pi6c8"]
 [ext_resource type="Script" path="res://scprits/score_calculator.gd" id="2_kmol2"]
@@ -7,11 +7,12 @@
 [ext_resource type="Script" path="res://scprits/planet stats.gd" id="3_xs0pn"]
 [ext_resource type="Script" path="res://scprits/notes.gd" id="7_isfqt"]
 [ext_resource type="Script" path="res://scprits/timer.gd" id="7_p881t"]
+[ext_resource type="Script" path="res://scenes/levels/alert box.gd" id="8_bcfip"]
+[ext_resource type="PackedScene" uid="uid://ckvo3nsa4yp6" path="res://scenes/alert.tscn" id="8_he6ep"]
 [ext_resource type="AudioStream" uid="uid://btn7tbtmjrabg" path="res://assets/sounds/music/main_theme.wav" id="8_qu3yv"]
 [ext_resource type="AudioStream" uid="uid://dvvrk68xqmtmf" path="res://assets/sounds/alert_Master-[AudioTrimmer.com].wav" id="9_bl724"]
 [ext_resource type="AudioStream" uid="uid://crivx5n5d06u3" path="res://assets/sounds/ui_Master.wav" id="10_hvu0j"]
 [ext_resource type="AudioStream" uid="uid://dsu4chnnmdhbk" path="res://assets/sounds/button 2.wav" id="11_7br0e"]
-[ext_resource type="PackedScene" uid="uid://cf2aktarxa6b2" path="res://scenes/info_box.tscn" id="12_bbwgw"]
 
 [node name="space" type="Node2D"]
 
@@ -104,6 +105,19 @@ custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
 script = ExtResource("7_isfqt")
 
+[node name="VBoxContainer" type="VBoxContainer" parent="ui node2"]
+offset_left = -568.0
+offset_top = -162.0
+offset_right = -391.0
+offset_bottom = 204.0
+script = ExtResource("8_bcfip")
+
+[node name="Control" parent="." instance=ExtResource("8_he6ep")]
+offset_left = -558.0
+offset_top = -181.0
+offset_right = -558.0
+offset_bottom = -181.0
+
 [node name="sound_manager" type="Node" parent="."]
 
 [node name="main_theme" type="AudioStreamPlayer2D" parent="sound_manager"]
@@ -119,6 +133,8 @@ stream = ExtResource("10_hvu0j")
 [node name="button_press" type="AudioStreamPlayer2D" parent="sound_manager"]
 stream = ExtResource("11_7br0e")
 
-[node name="Control" parent="." instance=ExtResource("12_bbwgw")]
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [connection signal="tourist_visit" from="score_calculator" to="ui node2/tourists infomation/notes" method="_on_score_calculator_tourist_visit"]
+[connection signal="timeout" from="Timer" to="gamemanger" method="_on_timer_timeout"]
