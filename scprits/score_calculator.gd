@@ -16,7 +16,6 @@ var animal_text=""
 var o2_text=""
 var co2_text=""
 var air_text=""
-
 func calculate_score():
 	score=0
 	print("tourist results")
@@ -32,9 +31,9 @@ func calculate_score():
 	if gm.plants >= 15:
 		score+=2
 		plant_text=("lots of plants score +2\n")
-	elif gm.plants <= 5:
+	elif gm.plants <=0:
 		score-=2
-		plant_text=("very few plants score -2\n")
+		plant_text=("no plants score -2\n")
 	elif gm.plant >=10:
 		score+=1
 		plant_text=("good amount of plants score +1\n")
@@ -44,9 +43,9 @@ func calculate_score():
 	if gm.animals >= 15:
 		score+=2
 		animal_text=("lots of animals score +2\n")
-	elif gm.animals <= 5:
+	elif gm.animals <= 0:
 		score-=2
-		animal_text=("very few aniamls score -2\n")
+		animal_text=("no aniamls score -2\n")
 	elif gm.animals >= 10:
 		animal_text=("good amount of aniamals score +1\n")
 		score+=1
@@ -78,7 +77,7 @@ func _process(delta: float) -> void:
 		$"../sound_manager/notification".play()
 		calculate_score()
 		is_touring= true
-		tourists = round(rng.randi_range(0, 10))**(score+0.5)
+		tourists = score*1000
 		if tourists >ships:
 			tourists-= tourists-ships
 		emit_signal("tourist_visit")
