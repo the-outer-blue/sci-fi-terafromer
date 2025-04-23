@@ -1,8 +1,9 @@
 extends Node
+var gv="res://global_varibles.gd"
 var tempreture = 0
 var o2=0
 var co2=0
-var money=10000
+var money=5000
 var plants=0.0
 var animals =0.0
 var water=0
@@ -11,9 +12,10 @@ var other_gases = 100
 var o2persec=0
 var co2persec=0
 var max_gases=0
-var areason=""
-var preason=""
+var areason=" "
+var preason=" "
 var talking_about_plants=false
+signal death
 
 func increase_temp(amount):
 	tempreture+=amount
@@ -62,6 +64,7 @@ func keep_animals_check():
 		if keep_animals==false:
 			increase_animals(-ceili(animals/2))
 			areason=(areason+"\nanimals dying")
+			death.emit()
 			$"../sound_manager/alert".play()
 #checks if the plants can survive and gets rid of them if not
 func keep_plants_check():
@@ -84,6 +87,7 @@ func keep_plants_check():
 		if keep_plants == false:
 			increase_plants(-ceili(plants/2))
 			preason=(preason+"\nplants dying")
+			death.emit()
 			$"../sound_manager/alert".play()
 		
 func _on_timer_timeout() -> void:

@@ -15,6 +15,10 @@ run/main_scene="res://scenes/levels/space.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalVaribles="*res://scprits/global_varibles.gd"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"

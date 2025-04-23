@@ -1,9 +1,10 @@
 extends Control
 var alpha=0.0
-@onready var gm=%gamemanger
+@onready var gm="res://scprits/global_varibles.gd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("made")
 	var text=$RichTextLabel
 	if gm.talking_about_plants == true:
 		text.text=gm.preason

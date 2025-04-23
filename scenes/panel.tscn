@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dc6wwloobht7i"]
+
+[node name="Panel" type="Panel"]
+offset_right = 377.0
+offset_bottom = 395.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 378.0
+offset_bottom = 396.0
+text = "how to play
+
+you are a planet maneger an have eebn taked with turning this plannet into a tourist destonation you can do this by buying uprades to change the statis"

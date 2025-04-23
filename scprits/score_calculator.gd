@@ -34,7 +34,7 @@ func calculate_score():
 	elif gm.plants <=0:
 		score-=2
 		plant_text=("no plants score -2\n")
-	elif gm.plant >=10:
+	elif gm.plants >=10:
 		score+=1
 		plant_text=("good amount of plants score +1\n")
 	else:
@@ -78,8 +78,6 @@ func _process(delta: float) -> void:
 		calculate_score()
 		is_touring= true
 		tourists = score*1000
-		if tourists >ships:
-			tourists-= tourists-ships
 		emit_signal("tourist_visit")
 #give money based on amount of tourists
 		if tourists > 0:
