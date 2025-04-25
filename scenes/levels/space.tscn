@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://caw06w7on5aoa"]
+[gd_scene load_steps=15 format=3 uid="uid://caw06w7on5aoa"]
 
 [ext_resource type="Script" path="res://scprits/game_maneger.gd" id="1_pi6c8"]
 [ext_resource type="Script" path="res://scprits/score_calculator.gd" id="2_kmol2"]
-[ext_resource type="Texture2D" uid="uid://sywo0pn30uj1" path="res://assets/Planets/planet00.png" id="2_li5l3"]
 [ext_resource type="Script" path="res://scprits/add water.gd" id="3_pktup"]
 [ext_resource type="Script" path="res://scprits/planet stats.gd" id="3_xs0pn"]
 [ext_resource type="Script" path="res://scprits/notes.gd" id="7_isfqt"]
@@ -12,7 +11,10 @@
 [ext_resource type="AudioStream" uid="uid://dvvrk68xqmtmf" path="res://assets/sounds/alert_Master-[AudioTrimmer.com].wav" id="9_bl724"]
 [ext_resource type="AudioStream" uid="uid://crivx5n5d06u3" path="res://assets/sounds/ui_Master.wav" id="10_hvu0j"]
 [ext_resource type="AudioStream" uid="uid://dsu4chnnmdhbk" path="res://assets/sounds/button 2.wav" id="11_7br0e"]
+[ext_resource type="PackedScene" uid="uid://dc6wwloobht7i" path="res://scenes/panel.tscn" id="13_3pn8f"]
 [ext_resource type="Script" path="res://scenes/levels/button.gd" id="13_82laj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_km836"]
 
 [node name="space" type="Node2D"]
 
@@ -34,7 +36,7 @@ script = ExtResource("2_kmol2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_li5l3")
+texture = SubResource("CompressedTexture2D_km836")
 
 [node name="ui node2" type="Node" parent="."]
 
@@ -135,10 +137,14 @@ offset_left = -566.0
 offset_top = 286.0
 offset_right = -534.0
 offset_bottom = 315.0
-toggle_mode = true
 text = "how to play"
 script = ExtResource("13_82laj")
+
+[node name="Sprite2D6" parent="." instance=ExtResource("13_3pn8f")]
+visible = false
 
 [connection signal="death" from="gamemanger" to="ui node2/VBoxContainer" method="_on_gamemanger_death"]
 [connection signal="tourist_visit" from="score_calculator" to="ui node2/tourists infomation/notes" method="_on_score_calculator_tourist_visit"]
 [connection signal="timeout" from="Timer" to="gamemanger" method="_on_timer_timeout"]
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
+[connection signal="button_up" from="Button" to="Button" method="_on_button_up"]

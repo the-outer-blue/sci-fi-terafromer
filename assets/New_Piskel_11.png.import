@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d17is1d1uwdy7"
-path="res://.godot/imported/planet09.png-4db8d3a69496f8a41d3c7f728c359e51.ctex"
+uid="uid://bha6cubcvsa82"
+path="res://.godot/imported/New_Piskel_11.png-7171e3d044ba25b10e1833fe13fb7c98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Planets/planet09.png"
-dest_files=["res://.godot/imported/planet09.png-4db8d3a69496f8a41d3c7f728c359e51.ctex"]
+source_file="res://assets/New_Piskel_11.png"
+dest_files=["res://.godot/imported/New_Piskel_11.png-7171e3d044ba25b10e1833fe13fb7c98.ctex"]
 
 [params]
 

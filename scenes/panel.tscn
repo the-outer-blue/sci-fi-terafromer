@@ -1,13 +1,104 @@
-[gd_scene format=3 uid="uid://dc6wwloobht7i"]
+[gd_scene load_steps=3 format=3 uid="uid://dc6wwloobht7i"]
 
-[node name="Panel" type="Panel"]
-offset_right = 377.0
-offset_bottom = 395.0
+[ext_resource type="Texture2D" uid="uid://bha6cubcvsa82" path="res://assets/New_Piskel_11.png" id="1_n51ys"]
+[ext_resource type="Texture2D" uid="uid://bbqa00xsrqgpo" path="res://assets/New_Piskel_9.png" id="1_sq0bo"]
+
+[node name="Sprite2D6" type="Sprite2D"]
+scale = Vector2(4.14, 7.131)
+texture = ExtResource("1_sq0bo")
+region_enabled = true
+region_rect = Rect2(0, 0, 200, 75)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_right = 378.0
-offset_bottom = 396.0
+top_level = true
+offset_left = -273.0
+offset_top = -192.0
+offset_right = 295.0
+offset_bottom = -66.0
 text = "how to play
 
-you are a planet maneger an have eebn taked with turning this plannet into a tourist destonation you can do this by buying uprades to change the statis"
+you are a planet maneger an have been taked with turning this plannet into a tourist destonation you can do this by buying uprades to change the stats here is a quick explanation of everything in the game"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(-236.75, -0.749985)
+scale = Vector2(0.635, 0.635)
+texture = ExtResource("1_n51ys")
+region_enabled = true
+region_rect = Rect2(0, 0, 100, 100)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+top_level = true
+offset_left = -195.0
+offset_top = -32.695
+offset_right = 103.0
+offset_bottom = 84.305
+scale = Vector2(0.75, 0.75)
+text = "symbol for carbon dioxide. it can either be brought(whcih increases tempreture by 1) of procuced by plants at a rate of 1 per second"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(-236.75, 89.135)
+scale = Vector2(0.635, 0.635)
+texture = ExtResource("1_n51ys")
+region_enabled = true
+region_rect = Rect2(100, 0, 100, 100)
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+top_level = true
+offset_left = -195.0
+offset_top = 71.07
+offset_right = 103.0
+offset_bottom = 144.07
+scale = Vector2(0.75, 0.75)
+text = "symbol for oxegen. it can either be brought of procuced by plants at a rate of 1 per second"
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(-236.75, 172.44)
+scale = Vector2(0.635, 0.635)
+texture = ExtResource("1_n51ys")
+region_enabled = true
+region_rect = Rect2(0, 100, 100, 100)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+top_level = true
+offset_left = -195.0
+offset_top = 163.0
+offset_right = 103.0
+offset_bottom = 236.0
+scale = Vector2(0.75, 0.75)
+text = "symbol of water. can be brought"
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(51.615, -0.749985)
+scale = Vector2(0.635, 0.635)
+texture = ExtResource("1_n51ys")
+region_enabled = true
+region_rect = Rect2(100, 100, 100, 100)
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+top_level = true
+offset_left = 84.0
+offset_top = -23.0
+offset_right = 382.0
+offset_bottom = 52.0
+scale = Vector2(0.75, 0.75)
+text = "symbol for animals. can be brought. requires more then 5 as well as less the 30 oxegen and 1+ plant."
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(50.715, 89.135)
+texture = ExtResource("1_n51ys")
+region_enabled = true
+region_rect = Rect2(0, 200, 100, 100)
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="."]
+top_level = true
+offset_left = 84.0
+offset_top = 61.0
+offset_right = 382.0
+offset_bottom = 164.0
+scale = Vector2(0.75, 0.75)
+text = "symbol for plants. can be brought. requires more then 1 carbon dioxide more then 5 and less then 60 tempreture at least 2 water per plant."
