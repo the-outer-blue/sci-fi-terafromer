@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://cv6avfv4ngwnh"]
+
+[ext_resource type="Texture2D" uid="uid://bbqa00xsrqgpo" path="res://assets/New_Piskel_9.png" id="1_7m1pw"]
+[ext_resource type="Script" path="res://scprits/add water.gd" id="1_nmnfr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrct3"]
+atlas = ExtResource("1_7m1pw")
+region = Rect2(0, 0, 200, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4yv0"]
+atlas = ExtResource("1_7m1pw")
+region = Rect2(200, 0, 200, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxf21"]
+atlas = ExtResource("1_7m1pw")
+region = Rect2(0, 75, 200, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hhqq"]
+atlas = ExtResource("1_7m1pw")
+region = Rect2(200, 75, 200, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57fpf"]
+atlas = ExtResource("1_7m1pw")
+region = Rect2(0, 150, 200, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyo8o"]
+atlas = ExtResource("1_7m1pw")
+region = Rect2(200, 150, 200, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q65jn"]
+atlas = ExtResource("1_7m1pw")
+region = Rect2(0, 225, 200, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg5fq"]
+atlas = ExtResource("1_7m1pw")
+region = Rect2(200, 225, 200, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcjjv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrct3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4yv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxf21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hhqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57fpf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyo8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q65jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg5fq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Container" type="Container"]
+offset_right = 204.0
+offset_bottom = 84.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(101, 38)
+scale = Vector2(1.009, 1)
+sprite_frames = SubResource("SpriteFrames_dcjjv")
+autoplay = "default"
+frame_progress = 0.555192
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(206.565, 76.945)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_nmnfr")
+buttontype = 5

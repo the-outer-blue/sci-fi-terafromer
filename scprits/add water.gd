@@ -1,8 +1,10 @@
 extends Button
 @onready var gm = %gamemanger
 @export var buttontype = 0
-var button_text = ["tempreture","oxegen\n-100 money+1o2","carbon dioxide\n-100 money+1co2","plants\n-50 money +1plant\nmay die if planet is inhabittble","animals\n-50 money +1animal\nmay die if planet is inhabittble","water\n-10money +1%water"]
+var black = Color(0.0,0.0,0.0,1.0)
+var button_text = ["tempreture","oxegen\n-100 money+1o2","carbon dioxide\n-100 money+1co2","plants\n-50 money +1plant","animals\n-50 money +1animal","water\n-10money +1%water"]
 func _ready() -> void:
+	set("theme_override_colors/font_color",black)
 	text = ("add " + button_text[buttontype])
 func _pressed():
 	if buttontype == 0:
