@@ -2,7 +2,7 @@ extends Button
 @onready var gm = %gamemanger
 @export var buttontype = 0
 var black = Color(0.0,0.0,0.0,1.0)
-var button_text = ["tempreture","oxegen\n-100 money+1o2","carbon dioxide\n-100 money+1co2","plants\n-50 money +1plant","animals\n-50 money +1animal","water\n-10money +1%water"]
+var button_text = ["tempreture","o2\n-100 money+1o2","co2\n-100 money+1co2","plants\n-50 money+1plant","animals\n-50 money+1animal","water\n-10 money+1%water"]
 func _ready() -> void:
 	set("theme_override_colors/font_color",black)
 	text = ("add " + button_text[buttontype])

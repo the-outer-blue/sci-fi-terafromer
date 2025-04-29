@@ -84,6 +84,7 @@ func keep_plants_check():
 			if water/plants < 2:
 				increase_plants(-(plants-(water/2)))
 				preason=("water too low")
+				keep_plants=false
 		if keep_plants == false:
 			increase_plants(-ceili(plants/2))
 			preason=(preason+"\nplants dying")
@@ -95,6 +96,9 @@ func _on_timer_timeout() -> void:
 	preason=""
 	keep_animals_check()
 	keep_plants_check()
-	o2 += o2persec
-	co2 += co2persec
-	
+	o2 += ceili(o2persec)
+	co2 += ceili(co2persec)
+	if co2 <= 0:
+		co2=0
+	if o2 <= 0:
+		o2=0

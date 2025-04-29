@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 GlobalVaribles="*res://scprits/global_varibles.gd"
 
+[display]
+
+window/size/borderless=true
+window/stretch/mode="viewport"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"

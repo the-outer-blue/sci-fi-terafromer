@@ -6,7 +6,7 @@ var score = 0
 var tourists=0
 var ships = 0
 var is_touring=false
-var money_per_guest=50
+var money_per_guest=5
 var breathable_air=false
 const time_till_tourist = 60
 signal tourist_visit
@@ -17,10 +17,10 @@ var o2_text=""
 var co2_text=""
 var air_text=""
 func calculate_score():
-	score=0
+	score=5
 	print("tourist results")
 	if gm.tempreture >=50:
-		score-=1
+		score-=3
 		temp_text=("temp too hiigh score -1 remove co2 for lower temps\n")
 	elif gm.tempreture <=10:
 		score-=1
@@ -77,7 +77,7 @@ func _process(delta: float) -> void:
 		$"../sound_manager/notification".play()
 		calculate_score()
 		is_touring= true
-		tourists = score*1000
+		tourists = score*100
 		emit_signal("tourist_visit")
 #give money based on amount of tourists
 		if tourists > 0:

@@ -1,22 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://dc6wwloobht7i"]
+[gd_scene load_steps=3 format=3 uid="uid://dc6wwloobht7i"]
 
+[ext_resource type="FontFile" uid="uid://bmgt6dexccfgg" path="res://assets/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="1_mq6n0"]
 [ext_resource type="Texture2D" uid="uid://bha6cubcvsa82" path="res://assets/New_Piskel_11.png" id="1_n51ys"]
 
 [node name="Sprite2D6" type="ColorRect"]
-offset_left = -280.0
-offset_top = -198.0
-offset_right = 305.0
-offset_bottom = 198.0
+offset_left = -500.0
+offset_top = -321.0
+offset_right = 500.0
+offset_bottom = 204.0
 color = Color(0.129558, 0.129558, 0.129558, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 top_level = true
 z_index = 2
 layout_mode = 0
-offset_left = -273.0
-offset_top = -192.0
-offset_right = 295.0
-offset_bottom = -66.0
+offset_left = -478.0
+offset_top = -300.0
+offset_right = 488.0
+offset_bottom = -109.0
+theme_override_fonts/normal_font = ExtResource("1_mq6n0")
+theme_override_font_sizes/normal_font_size = 25
 text = "how to play
 
 you are a planet maneger an have been taked with turning this plannet into a tourist destonation you can do this by buying uprades to change the stats here is a quick explanation of everything in the game"
@@ -24,8 +27,7 @@ you are a planet maneger an have been taked with turning this plannet into a tou
 [node name="Sprite2D" type="Sprite2D" parent="."]
 top_level = true
 z_index = 2
-position = Vector2(-236.75, -0.749985)
-scale = Vector2(0.635, 0.635)
+position = Vector2(-430, -120)
 texture = ExtResource("1_n51ys")
 region_enabled = true
 region_rect = Rect2(0, 0, 100, 100)
@@ -34,18 +36,18 @@ region_rect = Rect2(0, 0, 100, 100)
 top_level = true
 z_index = 2
 layout_mode = 0
-offset_left = -195.0
-offset_top = -32.695
-offset_right = 103.0
-offset_bottom = 84.305
-scale = Vector2(0.75, 0.75)
-text = "symbol for carbon dioxide. it can either be brought(whcih increases tempreture by 1) of procuced by plants at a rate of 1 per second"
+offset_left = -372.0
+offset_top = -150.0
+offset_right = 2.0
+offset_bottom = 5.0
+theme_override_fonts/normal_font = ExtResource("1_mq6n0")
+theme_override_font_sizes/normal_font_size = 22
+text = "carbon dioxide. can either be brought(whcih increases tempreture by 1) of procuced by plants at a rate of 1 per second"
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 top_level = true
 z_index = 2
-position = Vector2(-236.75, 89.135)
-scale = Vector2(0.635, 0.635)
+position = Vector2(-430, 50)
 texture = ExtResource("1_n51ys")
 region_enabled = true
 region_rect = Rect2(100, 0, 100, 100)
@@ -54,18 +56,18 @@ region_rect = Rect2(100, 0, 100, 100)
 top_level = true
 z_index = 2
 layout_mode = 0
-offset_left = -195.0
-offset_top = 71.07
-offset_right = 103.0
-offset_bottom = 144.07
-scale = Vector2(0.75, 0.75)
-text = "symbol for oxegen. it can either be brought of procuced by plants at a rate of 1 per second"
+offset_left = -373.0
+offset_top = 25.0
+offset_right = 1.0
+offset_bottom = 142.0
+theme_override_fonts/normal_font = ExtResource("1_mq6n0")
+theme_override_font_sizes/normal_font_size = 22
+text = "oxegen. can either be brought of procuced by plants at a rate of 1 per second"
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 top_level = true
 z_index = 2
-position = Vector2(-236.75, 172.44)
-scale = Vector2(0.635, 0.635)
+position = Vector2(-430, 175)
 texture = ExtResource("1_n51ys")
 region_enabled = true
 region_rect = Rect2(0, 100, 100, 100)
@@ -74,18 +76,19 @@ region_rect = Rect2(0, 100, 100, 100)
 top_level = true
 z_index = 2
 layout_mode = 0
-offset_left = -195.0
-offset_top = 163.0
-offset_right = 103.0
-offset_bottom = 236.0
-scale = Vector2(0.75, 0.75)
-text = "symbol of water. can be brought"
+offset_left = -365.0
+offset_top = 150.0
+offset_right = -67.0
+offset_bottom = 223.0
+theme_override_fonts/normal_font = ExtResource("1_mq6n0")
+theme_override_font_sizes/normal_font_size = 22
+text = "water. can be brought"
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
 top_level = true
 z_index = 2
-position = Vector2(51.615, -0.749985)
-scale = Vector2(0.635, 0.635)
+position = Vector2(52, -100)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_n51ys")
 region_enabled = true
 region_rect = Rect2(100, 100, 100, 100)
@@ -94,17 +97,19 @@ region_rect = Rect2(100, 100, 100, 100)
 top_level = true
 z_index = 2
 layout_mode = 0
-offset_left = 84.0
-offset_top = -23.0
-offset_right = 382.0
-offset_bottom = 52.0
-scale = Vector2(0.75, 0.75)
-text = "symbol for animals. can be brought. requires more then 5 as well as less the 30 oxegen and 1+ plant."
+offset_left = 102.54
+offset_top = -150.0
+offset_right = 400.54
+offset_bottom = -6.0
+theme_override_fonts/normal_font = ExtResource("1_mq6n0")
+theme_override_font_sizes/normal_font_size = 22
+text = "animals. can be brought. requires more then 5 as well as less the 30 oxegen and 1+ plant."
 
 [node name="Sprite2D5" type="Sprite2D" parent="."]
 top_level = true
 z_index = 2
-position = Vector2(50.715, 89.135)
+position = Vector2(45, 50)
+scale = Vector2(2, 2)
 texture = ExtResource("1_n51ys")
 region_enabled = true
 region_rect = Rect2(0, 200, 100, 100)
@@ -113,9 +118,9 @@ region_rect = Rect2(0, 200, 100, 100)
 top_level = true
 z_index = 2
 layout_mode = 0
-offset_left = 84.0
-offset_top = 61.0
-offset_right = 382.0
-offset_bottom = 164.0
-scale = Vector2(0.75, 0.75)
-text = "symbol for plants. can be brought. requires more then 1 carbon dioxide more then 5 and less then 60 tempreture at least 2 water per plant."
+offset_left = 94.0
+offset_right = 459.0
+offset_bottom = 154.0
+theme_override_fonts/normal_font = ExtResource("1_mq6n0")
+theme_override_font_sizes/normal_font_size = 22
+text = "plants. can be brought. requires more then 1 carbon dioxide more then 5 and less then 60 tempreture at least 2 water per plant."

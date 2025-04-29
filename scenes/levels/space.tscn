@@ -1,6 +1,7 @@
-[gd_scene load_steps=89 format=3 uid="uid://caw06w7on5aoa"]
+[gd_scene load_steps=91 format=3 uid="uid://caw06w7on5aoa"]
 
 [ext_resource type="Script" path="res://scprits/game_maneger.gd" id="1_pi6c8"]
+[ext_resource type="FontFile" uid="uid://bmgt6dexccfgg" path="res://assets/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="1_rby1w"]
 [ext_resource type="Script" path="res://scprits/score_calculator.gd" id="2_kmol2"]
 [ext_resource type="Script" path="res://scprits/add water.gd" id="3_pktup"]
 [ext_resource type="Script" path="res://scprits/planet stats.gd" id="3_xs0pn"]
@@ -16,6 +17,7 @@
 [ext_resource type="Script" path="res://scenes/levels/button.gd" id="13_82laj"]
 [ext_resource type="Texture2D" uid="uid://dvncusiq8kxwr" path="res://assets/New_Piskel_10.png" id="14_1c420"]
 [ext_resource type="Texture2D" uid="uid://6vg356fgmcps" path="res://assets/green_planet_ss.png" id="15_nhotn"]
+[ext_resource type="Script" path="res://scenes/levels/quit.gd" id="18_sc87k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1fksn"]
 
@@ -515,6 +517,160 @@ animations = [{
 
 [node name="space" type="Node2D"]
 
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="stats text" type="RichTextLabel" parent="Node2D"]
+offset_left = -576.0
+offset_top = 14.6
+offset_right = -346.0
+offset_bottom = 230.6
+theme_override_fonts/normal_font = ExtResource("1_rby1w")
+script = ExtResource("3_xs0pn")
+
+[node name="upgrades button" type="HBoxContainer" parent="Node2D"]
+offset_left = -560.0
+offset_top = -316.0
+offset_right = 565.0
+offset_bottom = -242.0
+alignment = 1
+
+[node name="Button" type="Button" parent="Node2D/upgrades button"]
+custom_minimum_size = Vector2(100, 2.06)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_rby1w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1fksn")
+flat = true
+script = ExtResource("3_pktup")
+buttontype = 5
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D/upgrades button/Button"]
+z_index = -1
+position = Vector2(110.5, 36)
+scale = Vector2(1.105, 1)
+sprite_frames = SubResource("SpriteFrames_45oyp")
+autoplay = "default"
+
+[node name="Button2" type="Button" parent="Node2D/upgrades button"]
+custom_minimum_size = Vector2(100, 2.06)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_rby1w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_50b01")
+flat = true
+script = ExtResource("3_pktup")
+buttontype = 1
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D/upgrades button/Button2"]
+z_index = -1
+position = Vector2(111, 36)
+scale = Vector2(1.11, 1)
+sprite_frames = SubResource("SpriteFrames_45oyp")
+autoplay = "default"
+
+[node name="Button3" type="Button" parent="Node2D/upgrades button"]
+custom_minimum_size = Vector2(100, 2.06)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_rby1w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_50b01")
+flat = true
+script = ExtResource("3_pktup")
+buttontype = 2
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D/upgrades button/Button3"]
+z_index = -1
+position = Vector2(111.5, 36)
+scale = Vector2(1.115, 1)
+sprite_frames = SubResource("SpriteFrames_45oyp")
+autoplay = "default"
+
+[node name="Button4" type="Button" parent="Node2D/upgrades button"]
+custom_minimum_size = Vector2(100, 2.06)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_rby1w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_50b01")
+flat = true
+script = ExtResource("3_pktup")
+buttontype = 3
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D/upgrades button/Button4"]
+z_index = -1
+position = Vector2(111.5, 36)
+scale = Vector2(1.115, 1)
+sprite_frames = SubResource("SpriteFrames_45oyp")
+autoplay = "default"
+
+[node name="Button5" type="Button" parent="Node2D/upgrades button"]
+custom_minimum_size = Vector2(100, 2.06)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_rby1w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_50b01")
+flat = true
+script = ExtResource("3_pktup")
+buttontype = 4
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D/upgrades button/Button5"]
+z_index = -1
+position = Vector2(111, 36)
+scale = Vector2(1.11, 1)
+sprite_frames = SubResource("SpriteFrames_45oyp")
+autoplay = "default"
+
+[node name="tourists infomation" type="VBoxContainer" parent="Node2D"]
+offset_left = 352.0
+offset_top = -230.0
+offset_right = 557.0
+offset_bottom = 289.0
+alignment = 1
+
+[node name="timer" type="RichTextLabel" parent="Node2D/tourists infomation"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 75.08)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_rby1w")
+script = ExtResource("7_p881t")
+
+[node name="notes" type="RichTextLabel" parent="Node2D/tourists infomation"]
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_rby1w")
+script = ExtResource("7_isfqt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D"]
+offset_left = -568.0
+offset_top = -162.0
+offset_right = -391.0
+offset_bottom = 204.0
+script = ExtResource("8_bcfip")
+
 [node name="Sprite2D6" parent="." instance=ExtResource("13_3pn8f")]
 visible = false
 visibility_layer = 2
@@ -538,145 +694,6 @@ script = ExtResource("2_kmol2")
 
 [node name="ui node2" type="Node" parent="."]
 
-[node name="stats text" type="RichTextLabel" parent="ui node2"]
-offset_left = -576.0
-offset_top = 14.6
-offset_right = -346.0
-offset_bottom = 230.6
-script = ExtResource("3_xs0pn")
-
-[node name="upgrades button" type="HBoxContainer" parent="ui node2"]
-offset_left = -560.0
-offset_top = -316.0
-offset_right = 565.0
-offset_bottom = -242.0
-alignment = 1
-
-[node name="Button" type="Button" parent="ui node2/upgrades button"]
-custom_minimum_size = Vector2(100, 2.06)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_1fksn")
-flat = true
-script = ExtResource("3_pktup")
-buttontype = 5
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ui node2/upgrades button/Button"]
-z_index = -1
-position = Vector2(110.5, 36)
-scale = Vector2(1.105, 1)
-sprite_frames = SubResource("SpriteFrames_45oyp")
-
-[node name="Button2" type="Button" parent="ui node2/upgrades button"]
-custom_minimum_size = Vector2(100, 2.06)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_50b01")
-flat = true
-script = ExtResource("3_pktup")
-buttontype = 1
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ui node2/upgrades button/Button2"]
-z_index = -1
-position = Vector2(111, 36)
-scale = Vector2(1.11, 1)
-sprite_frames = SubResource("SpriteFrames_45oyp")
-
-[node name="Button3" type="Button" parent="ui node2/upgrades button"]
-custom_minimum_size = Vector2(100, 2.06)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_50b01")
-flat = true
-script = ExtResource("3_pktup")
-buttontype = 2
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ui node2/upgrades button/Button3"]
-z_index = -1
-position = Vector2(111.5, 36)
-scale = Vector2(1.115, 1)
-sprite_frames = SubResource("SpriteFrames_45oyp")
-
-[node name="Button4" type="Button" parent="ui node2/upgrades button"]
-custom_minimum_size = Vector2(100, 2.06)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_50b01")
-flat = true
-script = ExtResource("3_pktup")
-buttontype = 3
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ui node2/upgrades button/Button4"]
-z_index = -1
-position = Vector2(111.5, 36)
-scale = Vector2(1.115, 1)
-sprite_frames = SubResource("SpriteFrames_45oyp")
-
-[node name="Button5" type="Button" parent="ui node2/upgrades button"]
-custom_minimum_size = Vector2(100, 2.06)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_50b01")
-flat = true
-script = ExtResource("3_pktup")
-buttontype = 4
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ui node2/upgrades button/Button5"]
-z_index = -1
-position = Vector2(111, 36)
-scale = Vector2(1.11, 1)
-sprite_frames = SubResource("SpriteFrames_45oyp")
-
-[node name="tourists infomation" type="VBoxContainer" parent="ui node2"]
-offset_left = 352.0
-offset_top = -230.0
-offset_right = 557.0
-offset_bottom = 289.0
-alignment = 1
-
-[node name="timer" type="RichTextLabel" parent="ui node2/tourists infomation"]
-clip_contents = false
-custom_minimum_size = Vector2(0, 75.08)
-layout_mode = 2
-script = ExtResource("7_p881t")
-
-[node name="notes" type="RichTextLabel" parent="ui node2/tourists infomation"]
-custom_minimum_size = Vector2(0, 275)
-layout_mode = 2
-script = ExtResource("7_isfqt")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ui node2"]
-offset_left = -568.0
-offset_top = -162.0
-offset_right = -391.0
-offset_bottom = 204.0
-script = ExtResource("8_bcfip")
-
 [node name="sound_manager" type="Node" parent="."]
 
 [node name="main_theme" type="AudioStreamPlayer2D" parent="sound_manager"]
@@ -696,7 +713,7 @@ stream = ExtResource("11_7br0e")
 autostart = true
 
 [node name="space background" type="Sprite2D" parent="."]
-z_index = -1
+z_index = -2
 scale = Vector2(11.51, 11.5536)
 texture = ExtResource("14_1c420")
 
@@ -709,7 +726,9 @@ theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_rby1w")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_50b01")
+toggle_mode = true
 text = "how to play"
 flat = true
 script = ExtResource("13_82laj")
@@ -719,6 +738,7 @@ z_index = -1
 position = Vector2(111, 45)
 scale = Vector2(1.11, 1)
 sprite_frames = SubResource("SpriteFrames_45oyp")
+autoplay = "default"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.47, 2.47)
@@ -726,8 +746,32 @@ sprite_frames = SubResource("SpriteFrames_l40t4")
 autoplay = "default"
 frame_progress = 0.991769
 
-[connection signal="death" from="gamemanger" to="ui node2/VBoxContainer" method="_on_gamemanger_death"]
-[connection signal="tourist_visit" from="score_calculator" to="ui node2/tourists infomation/notes" method="_on_score_calculator_tourist_visit"]
+[node name="Button2" type="Button" parent="."]
+offset_left = 300.0
+offset_top = 200.0
+offset_right = 522.0
+offset_bottom = 283.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_rby1w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_50b01")
+toggle_mode = true
+text = "quit
+"
+flat = true
+script = ExtResource("18_sc87k")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Button2"]
+z_index = -1
+position = Vector2(111, 45)
+scale = Vector2(1.11, 1)
+sprite_frames = SubResource("SpriteFrames_45oyp")
+autoplay = "default"
+
+[connection signal="death" from="gamemanger" to="Node2D/VBoxContainer" method="_on_gamemanger_death"]
+[connection signal="tourist_visit" from="score_calculator" to="Node2D/tourists infomation/notes" method="_on_score_calculator_tourist_visit"]
 [connection signal="timeout" from="Timer" to="gamemanger" method="_on_timer_timeout"]
-[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
 [connection signal="button_up" from="Button" to="Button" method="_on_button_up"]
+[connection signal="toggled" from="Button" to="Button" method="_on_toggled"]
