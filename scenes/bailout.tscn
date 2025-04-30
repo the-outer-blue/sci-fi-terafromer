@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://lr4lt6vf1qau"]
+
+[ext_resource type="FontFile" uid="uid://bmgt6dexccfgg" path="res://assets/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="1_m700k"]
+
+[node name="bailout" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 73.0
+offset_right = 918.0
+offset_bottom = 573.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 38.0
+offset_right = 1346.0
+offset_bottom = 232.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_m700k")
+theme_override_font_sizes/normal_font_size = 75
+text = "
+OUT OF MONEY
+"

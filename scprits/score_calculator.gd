@@ -8,7 +8,7 @@ var ships = 0
 var is_touring=false
 var money_per_guest=5
 var breathable_air=false
-const time_till_tourist = 60
+const time_till_tourist = 30
 signal tourist_visit
 var temp_text=""
 var plant_text=""
