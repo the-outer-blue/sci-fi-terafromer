@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://caw06w7on5aoa"]
+[gd_scene load_steps=93 format=3 uid="uid://caw06w7on5aoa"]
 
 [ext_resource type="Script" path="res://scprits/game_maneger.gd" id="1_pi6c8"]
 [ext_resource type="FontFile" uid="uid://bmgt6dexccfgg" path="res://assets/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="1_rby1w"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scprits/timer.gd" id="7_p881t"]
 [ext_resource type="Script" path="res://scenes/levels/alert box.gd" id="8_bcfip"]
 [ext_resource type="AudioStream" uid="uid://btn7tbtmjrabg" path="res://assets/sounds/music/main_theme.wav" id="8_qu3yv"]
+[ext_resource type="Script" path="res://scenes/levels/remove_o_2.gd" id="8_qx7wm"]
 [ext_resource type="AudioStream" uid="uid://dvvrk68xqmtmf" path="res://assets/sounds/alert_Master-[AudioTrimmer.com].wav" id="9_bl724"]
 [ext_resource type="AudioStream" uid="uid://crivx5n5d06u3" path="res://assets/sounds/ui_Master.wav" id="10_hvu0j"]
 [ext_resource type="AudioStream" uid="uid://dsu4chnnmdhbk" path="res://assets/sounds/button 2.wav" id="11_7br0e"]
@@ -18,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dvncusiq8kxwr" path="res://assets/New_Piskel_10.png" id="14_1c420"]
 [ext_resource type="Texture2D" uid="uid://6vg356fgmcps" path="res://assets/green_planet_ss.png" id="15_nhotn"]
 [ext_resource type="Script" path="res://scenes/levels/quit.gd" id="18_sc87k"]
+[ext_resource type="PackedScene" uid="uid://lr4lt6vf1qau" path="res://scenes/bailout.tscn" id="20_uf4ve"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1fksn"]
 
@@ -547,7 +549,6 @@ theme_override_fonts/font = ExtResource("1_rby1w")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1fksn")
 flat = true
 script = ExtResource("3_pktup")
-buttontype = 5
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D/upgrades button/Button"]
 z_index = -1
@@ -671,6 +672,34 @@ offset_right = -391.0
 offset_bottom = 33.0
 script = ExtResource("8_bcfip")
 
+[node name="remove o2" type="Button" parent="Node2D"]
+visible = false
+custom_minimum_size = Vector2(100, 2.06)
+offset_left = 230.0
+offset_top = -235.0
+offset_right = 453.0
+offset_bottom = -160.0
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_rby1w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_50b01")
+text = "remove o2
+-1000 money
+-10 o2"
+flat = true
+script = ExtResource("8_qx7wm")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D/remove o2"]
+z_index = -1
+position = Vector2(111.5, 36)
+scale = Vector2(1.115, 1)
+sprite_frames = SubResource("SpriteFrames_45oyp")
+autoplay = "default"
+
 [node name="Sprite2D6" parent="." instance=ExtResource("13_3pn8f")]
 visible = false
 visibility_layer = 2
@@ -747,6 +776,7 @@ autoplay = "default"
 frame_progress = 0.991769
 
 [node name="Button2" type="Button" parent="."]
+visible = false
 offset_left = 350.0
 offset_top = 227.0
 offset_right = 572.0
@@ -769,7 +799,16 @@ scale = Vector2(1.11, 1)
 sprite_frames = SubResource("SpriteFrames_45oyp")
 autoplay = "default"
 
+[node name="bailout" parent="." instance=ExtResource("20_uf4ve")]
+visible = false
+z_index = 1
+offset_left = 20.0
+offset_top = -15.0
+offset_right = 20.0
+offset_bottom = -15.0
+
 [connection signal="death" from="gamemanger" to="Node2D/VBoxContainer" method="_on_gamemanger_death"]
+[connection signal="remove_o2" from="gamemanger" to="Node2D/remove o2" method="_on_gamemanger_remove_o_2"]
 [connection signal="tourist_visit" from="score_calculator" to="Node2D/tourists infomation/notes" method="_on_score_calculator_tourist_visit"]
 [connection signal="timeout" from="Timer" to="gamemanger" method="_on_timer_timeout"]
 [connection signal="button_up" from="Button" to="Button" method="_on_button_up"]

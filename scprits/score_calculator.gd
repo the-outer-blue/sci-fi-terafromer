@@ -16,6 +16,7 @@ var animal_text=""
 var o2_text=""
 var co2_text=""
 var air_text=""
+
 func calculate_score():
 	score=5
 	print("tourist results")

@@ -16,6 +16,8 @@ var areason=" "
 var preason=" "
 var talking_about_plants=false
 signal death
+signal remove_o2
+@onready var quit=$"../bailout"
 
 func increase_temp(amount):
 	tempreture+=amount
@@ -102,3 +104,9 @@ func _on_timer_timeout() -> void:
 		co2=0
 	if o2 <= 0:
 		o2=0
+	if o2 >30:
+		remove_o2.emit(true)
+	if o2 <30:
+		remove_o2.emit(false)
+	if money < 100:
+		quit.visible=true
